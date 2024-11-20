@@ -26,12 +26,15 @@ window.onload = function() {
     "during my travel"
   ];
 
-  let arm = Math.floor(Math.random() * who.length);
-  let arm2 = Math.floor(Math.random() * action.length);
-  let arm3 = Math.floor(Math.random() * what.length);
-  let arm4 = Math.floor(Math.random() * when.length);
+  let arm = GetRandom(who);
+  let arm2 = GetRandom(action);
+  let arm3 = GetRandom(what);
+  let arm4 = GetRandom(when);
 
   document.querySelector("#excuse").innerHTML =
     who[arm] + " " + action[arm2] + " " + what[arm3] + " " + when[arm4];
 };
-//write your code here
+
+function GetRandom(array) {
+  return Math.floor(Math.random() * array.length);
+}
